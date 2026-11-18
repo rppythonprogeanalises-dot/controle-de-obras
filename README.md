@@ -59,8 +59,9 @@ ControleDeObras/
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com
-   cd SEU-REPOSITORIO
+   git clone https://github.com/rppythonprogeanalises-dot/controle-de-obras.git
+cd controle-de-obras
+
    ```
 
 2. **Crie e ative um ambiente virtual:**
