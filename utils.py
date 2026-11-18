@@ -5,9 +5,9 @@ from datetime import datetime
 import customtkinter as ctk
 
 
-# Define onde o banco de dados será salvo com segurança
+# Define onde o banco de dados
 if getattr(sys, "frozen", False):
-    # Quando compilado (.exe ou binário Linux), salva na pasta de dados do usuário
+    # Quando compilado salva na pasta de dados do usuário
     if sys.platform == "win32":
         PASTA_DADOS = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "ControleDeObras"
     else:
@@ -15,7 +15,7 @@ if getattr(sys, "frozen", False):
     PASTA_DADOS.mkdir(parents=True, exist_ok=True)
     DB_PATH = str(PASTA_DADOS / "controle_obras.db")
 else:
-    # Durante o desenvolvimento no PyCharm, mantém o banco na pasta do projeto
+    # Durante o desenvolvimento, mantém o banco na pasta do projeto
     APP_DIR = os.path.dirname(os.path.abspath(__file__))
     DB_PATH = os.path.join(APP_DIR, "controle_obras.db")
 

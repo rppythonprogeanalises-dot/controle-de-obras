@@ -134,57 +134,6 @@ class TelaContratos:
         messagebox.showinfo("Concluído", "Contrato cadastrado.")
 
 
-        def atualizar_contratos(self):
-            self.limpar_tabela(self.tabela_contratos)
-
-            with conectar() as db:
-                contratos = db.execute("""
-                    SELECT ct.id, cl.nome, ct.obra, ct.servico,
-                           ct.valor + COALESCE(
-                               (SELECT SUM(a.valor) FROM aditivos a
-                                WHERE a.contrato_id = ct.id), 0
-                           ) AS valor_total
-                    FROM contratos ct
-                    JOIN clientes cl ON cl.id = ct.cliente_id
-                    ORDER BY ct.id DESC
-                """).fetchall()
-
-            self.ids_contratos = {}
-            opcoes = []
-
-            for contrato_id, cliente, obra, servico, valor in contratos:
-                self.tabela_contratos.insert(
-                    "",
-                    "end",
-                    values=(
-                        contrato_id,
-                        cliente,
-                        obra,
-                        servico,
-                        dinheiro(valor)
-                    )
-                )
-
-                texto = f"{contrato_id} - {cliente} - {obra}"
-                self.ids_contratos[texto] = contrato_id
-                opcoes.append(texto)
-
-            if opcoes:
-                self.recebimento_contrato.configure(values=opcoes)
-                self.recebimento_contrato.set(opcoes[0])
-
-                self.aditivo_contrato.configure(values=opcoes)
-                self.aditivo_contrato.set(opcoes[0])
-            else:
-                mensagem = "Cadastre um contrato primeiro"
-
-                self.recebimento_contrato.configure(values=[mensagem])
-                self.recebimento_contrato.set(mensagem)
-
-                self.aditivo_contrato.configure(values=[mensagem])
-                self.aditivo_contrato.set(mensagem)
-
-
     def excluir_contrato(self):
         item = self.item_selecionado(self.tabela_contratos, "contrato")
         if not item:

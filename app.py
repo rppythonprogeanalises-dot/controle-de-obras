@@ -12,7 +12,7 @@ from telas.recebimentos import TelaRecebimentos
 from telas.contratos import TelaContratos
 from telas.clientes import TelaClientes
 
-# Localiza a pasta de imagens tanto no PyCharm quanto após compilado (PyInstaller / cx_Freeze)
+# Localiza a pasta de imagens após compilado
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(getattr(sys, "_MEIPASS", Path(sys.executable).resolve().parent))
 else:
@@ -32,7 +32,7 @@ class TelaLogin(ctk.CTk):
         self.configure(fg_color='dark grey')
 
 
-        # Carrega ícone e logotipo com segurança
+        # Carrega ícone e logotipo
         imagem = Image.open(caminho_icone)
         self.icone = ImageTk.PhotoImage(imagem)
         self.iconphoto(True, self.icone)
@@ -66,7 +66,7 @@ class TelaLogin(ctk.CTk):
         self.senh_entry.place(x=120, y=145, width=240, height=24)
         self.senh_entry.bind('<Return>', lambda _e: self.fazer_login())
 
-        # Checkbox Mostrar Senha nas coordenadas exatas solicitadas
+        # Checkbox Mostrar Senha nas coordenadas exatas
         self.check = ctk.BooleanVar(value=False)
         self.checkbutton = ctk.CTkCheckBox(
             self,
@@ -146,7 +146,7 @@ class TelaLogin(ctk.CTk):
         self.botaoacesso.place_forget()
         self.botaocadastro.place_forget()
 
-        # Campos extras de cadastro
+        # Campos de cadastro
         self.nome_lbl = ctk.CTkLabel(
             self.frameLogin, text='Nome:', font=('Century Gothic', 18),
             fg_color='dark grey', text_color='black'
@@ -307,7 +307,7 @@ class Aplicativo(ctk.CTk, TelaAditivos, TelaRecebimentos, TelaContratos, TelaCli
             text_color="gray"
         ).pack(anchor="w", padx=25, pady=(5, 0))
 
-        # Tabela detalhada por obra reaproveitando o seu montar_tabela()
+        # Tabela detalhada por obra
         colunas_resumo = ("Cliente", "Obra", "Serviço", "Contratado", "Recebido", "Saldo")
         self.tabela_resumo = self.montar_tabela(self.aba_resumo, colunas_resumo)
 

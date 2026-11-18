@@ -79,8 +79,8 @@ def criar_usuario_inicial():
             return
 
         # Troque a senha depois do primeiro acesso.
-        usuario = "Ronaldo"
-        senha ="nado8169"
+        usuario = "admin"
+        senha ="admin"
         salt, senha_hash = criar_hash(senha)
         db.execute(
             "INSERT INTO usuarios (usuario, salt, senha_hash) VALUES (?, ?, ?)",
