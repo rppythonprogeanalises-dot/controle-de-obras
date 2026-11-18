@@ -1,5 +1,3 @@
-<img width="1107" height="732" alt="Captura de tela de 2026-11-17 22-37-40" src="https://github.com/user-attachments/assets/4abe4b54-bdfc-412c-852a-8ebac5170d5b" />
-<img width="614" height="342" alt="Captura de tela de 2026-11-17 22-36-52" src="https://github.com/user-attachments/assets/270e60db-2646-4971-a2d7-bb0ea75186b1" />
 # 🏗️ Controle de Obras e Serviços
 
 Sistema desktop desenvolvido em Python para gestão financeira e operacional de obras, contratos, aditivos e recebimentos, com interface moderna e banco de dados local integrado.
@@ -8,7 +6,8 @@ Sistema desktop desenvolvido em Python para gestão financeira e operacional de 
 
 ## 📸 Visão Geral do Sistema
 
-*(Dica: Depois de subir no GitHub, você pode editar este arquivo pelo próprio navegador e arrastar 2 ou 3 prints da tela de login e da tela principal aqui para ilustrar seu projeto!)*
+<img width="1107" height="732" alt="Captura de tela de 2026-11-17 22-37-40" src="https://github.com/user-attachments/assets/4abe4b54-bdfc-412c-852a-8ebac5170d5b" />
+<img width="614" height="342" alt="Captura de tela de 2026-11-17 22-36-52" src="https://github.com/user-attachments/assets/270e60db-2646-4971-a2d7-bb0ea75186b1" />
 
 ---
 
