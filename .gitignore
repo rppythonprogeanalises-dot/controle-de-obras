@@ -1,0 +1,18 @@
+# Ambiente virtual e cache do Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Configurações do PyCharm
+.idea/
+
+# Banco de dados local (evita subir senhas e dados de teste)
+*.db
+*.sqlite3
+
+# Pastas geradas na compilação (PyInstaller / cx_Freeze / Inno Setup)
+build/
+dist/
+*.spec
+Output/

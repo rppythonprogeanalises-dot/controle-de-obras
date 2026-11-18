@@ -1,0 +1,14 @@
+altgraph==0.17.5
+customtkinter==6.0.0
+cx_Freeze==8.7.4
+darkdetect==0.8.0
+end==1.3.1
+filelock==4.2.11
+freeze-core==0.8.1
+packaging==26.3
+patchelf==0.19.3.0
+pillow==13.0.0
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.10
+setuptools==84.2.1
+tk==0.1.0
